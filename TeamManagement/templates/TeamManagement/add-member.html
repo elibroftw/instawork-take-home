@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Team Mangement</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href="{% static 'TeamManagement/style.css' %}">
+</head>
+
+<body>
+    <!-- Add Member View -->
+    <header class="flex-row">
+        <div>
+            <h1>Add Team Member</h1>
+            <p>Set name, email, and role</p>
+        </div>
+    </header>
+    <hr>
+
+    <form class="member-form" action="/add-member/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class="save-btn" type="submit" value="Save">
+    </form>
+</body>
+</html>

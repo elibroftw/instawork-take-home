@@ -1,0 +1,109 @@
+:root {
+    --button-color: #4e7cf6;
+    --link-color: #00bfff;
+    --bg-color: #121212;
+    --fg-color: #f2f2f2;
+    --red: #d5858f;
+    /* 9f3b48 */
+    --dark-red: #792d37;
+    /* 451a1f */
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--button-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+}
+
+.flex-row p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#plus-sign {
+    font-size: 5em;
+    /* color: var(--button-color); */
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+#edit-sign {
+    font-size: 2em;
+}
+
+.member-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-form label {
+    margin-top: 1em;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.member-form #id_role {
+    margin-bottom: 1em;
+}
+
+/* https://stackoverflow.com/a/4642152/7732434 */
+.member-form #id_role input[type="radio"]:checked + label {
+    /* font-weight: bold; */
+    color: var(--button-color);
+}
+
+.save-btn {
+    padding: 10px 2em;
+    background-color: var(--button-color);
+    color: #fff;
+    border-radius: 5px;
+    /* border: white solid 1px; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.save-btn:hover {
+    background-color: #fff;
+    color: var(--button-color);
+}
+
+.delete-btn {
+    padding: 10px 2em;
+    background-color: #fff;
+    color: var(--red);
+    border-radius: 5px;
+    /* border: white solid 1px; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.delete-btn:hover {
+    background-color: var(--dark-red);
+    color:  #fff;
+}

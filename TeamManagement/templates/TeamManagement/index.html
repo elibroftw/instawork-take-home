@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Team Mangement</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href="{% static 'TeamManagement/style.css' %}">
+</head>
+
+<body>
+    <!-- Main View -->
+    <header class="flex-row">
+        <div>
+            <h1>Team Members</h1>
+            <p>You have <span>{{ team_members|length }}</span> team members.</p>
+        </div>
+        <a href="/add-member/"><span id="plus-sign">&#43;</span></a>
+    </header>
+    <hr>
+    {% for team_member in team_members %}
+    <!-- <img>{{ team_member.avatar }}</img> -->
+    <div class="flex-row team-member">
+        <!-- todo: entire thing is an edit link -->
+        <!-- bug: circle does not resize properly in mobile -->
+        <div class="circle"></div>
+        <div>
+            <!-- https://css-tricks.com/nested-links/ -->
+            <p class="name">{{ team_member.ui_name }}</p>
+            <a class="team-member-phone" href="tel:{{ team_member.phone_number }}">{{ team_member.phone_number }}</a>
+            <a class="team-member-email" href="mailto:{{ team_member.email }}">{{ team_member.email }}</a>
+        </div>
+        <a title="click to edit" href="/edit-member/{{ team_member.pk }}"><span id="edit-sign">&#x270E;</span></a>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+
+</html>
