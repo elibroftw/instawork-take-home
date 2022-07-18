@@ -17,10 +17,6 @@ class TeamMember(models.Model):
                             choices=ROLE_CHOICES,
                             default=REGULAR)
 
-    class Meta:
-        permissions = (('Regular', "Can't delete members"),
-                       ("Admin", 'Can delete members'))
-
     def __str__(self) -> str:
         return f'[{self.role}] {self.first_name} {self.last_name}, <{self.email}> {self.phone_number}'
 

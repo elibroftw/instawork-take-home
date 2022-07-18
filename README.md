@@ -17,5 +17,13 @@ A Django app made for Python 3.8+
 
 ## Helpful Commands
 
+- `runserver, makemigrations, sqlmigrate, migrate, test)`
 - `python manage.py makemigrations AppName`
 - `python manage.py sqlmigrate AppName 0001`
+- `python manage.py test`
+
+## Screenshots
+
+![View team members](Meta/view_team_members.jpg)
+![Add team member](Meta/add_team_member.jpg)
+![Edit team member](Meta/edit_team_member.jpg)

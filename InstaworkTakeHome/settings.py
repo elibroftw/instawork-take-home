@@ -26,7 +26,7 @@ if os.path.isfile(dotenv_file):
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-RUNNING_DEVSERVER = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
+RUNNING_DEVSERVER = sys.argv[1] in ('runserver', 'makemigrations', 'sqlmigrate', 'migrate', 'test')
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # SECURITY WARNING: keep the secret key used in production secret!
